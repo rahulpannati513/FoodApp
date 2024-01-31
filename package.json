@@ -1,0 +1,31 @@
+{
+  "name": "swiggy",
+  "version": "1.0.0",
+  "description": "swiggy clone",
+  "main": "App.js",
+  "scripts": {
+    "test": "zesh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rahulpannati513/swiggy.git"
+  },
+  "keywords": [
+    "swiggy",
+    "clone",
+    "fooddelivery"
+  ],
+  "author": "Rahul Pannati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahulpannati513/swiggy/issues"
+  },
+  "homepage": "https://github.com/rahulpannati513/swiggy#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
