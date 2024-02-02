@@ -11,23 +11,19 @@
 .nav-items {
   padding: 0px 20px;
 }
-
 .nav-items > ul {
   display: flex;
 }
-
 .nav-items > ul > li {
   font-size: 24px;
   list-style: none;
   padding: 10px;
   margin: 10px;
 }
-
 .res-card {
-  width: 200px;
-  height: 320px;
-
-  padding: 5px;
+  width: 245px;
+  height: 350px;
+  padding: 15px;
 }
 .res-card:hover {
   cursor: pointer;
@@ -41,5 +37,5 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
