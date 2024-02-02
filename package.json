@@ -4,6 +4,7 @@
   "description": "swiggy clone",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
     "test": "zesh"
   },
   "repository": {
