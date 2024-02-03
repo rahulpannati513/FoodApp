@@ -1,54 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import resList from "../utils/mockData";
 import ResturentCard from "./ResturentCard";
-
+import Schimmer from "./schimmer";
 const Body = () => {
-  const [listOfResurent, setListResturent] = useState(resList);
+  const [listOfResurent, setListResturent] = useState([]);
 
-  //Normal JS Variable
-  // let listOfResurentJS = [
-  //   {
-  //     id: "23596",
-  //     name: "Angaara 5",
-  //     cloudinaryImageId: "npu9n2pkxsawegspji1h",
-  //     locality: "Dargah Road, Nampally",
-  //     areaName: "Nampally",
-  //     costForTwo: "₹400 for two",
-  //     cuisines: ["Tandoor", "Biryani", "Chinese"],
-  //     avgRating: 4.1,
-  //     parentId: "5039",
-  //     avgRatingString: "4.2",
-  //     totalRatingsString: "10K+",
-  //   },
-  //   {
-  //     id: "23597",
-  //     name: "Bagara Buvva ",
-  //     cloudinaryImageId: "npu9n2pkxsawegspji1h",
-  //     locality: "Dargah Road, Nampally",
-  //     areaName: "Nampally",
-  //     costForTwo: "₹400 for two",
-  //     cuisines: ["Tandoor", "Biryani", "Chinese"],
-  //     avgRating: 3.8,
-  //     parentId: "5039",
-  //     avgRatingString: "4.8",
-  //     totalRatingsString: "10K+",
-  //   },
-  //   {
-  //     id: "23598",
-  //     name: "Mandi  ",
-  //     cloudinaryImageId: "npu9n2pkxsawegspji1h",
-  //     locality: "Narapally Road, Narapally",
-  //     areaName: "Nampally",
-  //     costForTwo: "₹500 for two",
-  //     cuisines: ["Mandi", "Biryani"],
-  //     avgRating: 4.8,
-  //     parentId: "5039",
-  //     avgRatingString: "4.8",
-  //     totalRatingsString: "10K+",
-  //   },
-  // ];
-  return (
+  useEffect(() => {
+    fetchData();
+    console.log("useEffect Called");
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+
+    //optional chaining - if the value is not present it will not throw error
+    setListResturent(
+      json?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    console.log(
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
+  };
+
+  // if (listOfResurent.length === 0) {
+  //   return <Schimmer />;
+  // }
+
+  return listOfResurent.length === 0 ? (
+    <Schimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button

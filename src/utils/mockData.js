@@ -1,7 +1,7 @@
 const resList = [
   {
     info: {
-      id: "23596",
+      id: "23586",
       name: "Angaara 5",
       cloudinaryImageId: "npu9n2pkxsawegspji1h",
       locality: "Dargah Road, Nampally",
@@ -774,7 +774,7 @@ const resList = [
   },
   {
     info: {
-      id: "28990",
+      id: "2898",
       name: "Krupa Mess & tiffins",
       cloudinaryImageId: "tzyqy2ovy09e9y7hjyqq",
       locality: "JN road",
