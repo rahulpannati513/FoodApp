@@ -62,3 +62,11 @@
   margin: 10px;
   justify-content: space-evenly;
 }
+
+.login-btn {
+  padding: 6px 14px;
+  margin: 10px;
+  border: 1px solid #d2691e;
+  background-color: #d2691e;
+  cursor: pointer;
+}
