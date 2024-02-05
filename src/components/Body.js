@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import resList from "../utils/mockData";
 import ResturentCard from "./ResturentCard";
-import Schimmer from "./schimmer";
+import Schimmer from "./Schimmer";
 const Body = () => {
   const [listOfResurent, setListResturent] = useState([]);
   const [searchText, setSearchText] = useState("");

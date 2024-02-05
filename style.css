@@ -70,3 +70,102 @@
   background-color: #d2691e;
   cursor: pointer;
 }
+
+.res-menu-top-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.res-menu-top-container_right {
+  /* display: flex;
+  flex-direction: column; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+}
+.res-menu-top-rating,
+.res-menu-top-container_left p {
+  color: #aea7a7;
+  font-size: smaller;
+}
+.res-menu-top-container_left .p_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8d8c8c;
+
+  font-size: medium;
+}
+.res-menu-top-container_left .p_2 span .icon_size {
+  width: 20px;
+  height: 20px;
+  font-weight: 900;
+}
+
+.res-menu-top-container_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #e9e9eb;
+  height: 90px;
+  width: 80px;
+}
+
+.res-menu-top-container_right .star_icon {
+  background-color: #ffffff;
+}
+
+.res-menu-top-container_right .res-menu-top-rating {
+  background-color: #ffffff;
+}
+
+.res-menu-top-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 2px dashed #e9e9eb;
+}
+.top {
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.coupon_cards {
+  background-color: #ffffff;
+  border: 1px solid #e9e9eb;
+  width: 200px;
+  height: 65px;
+}
+/* .restuarant_menu_body
+  .res-menu-top-container
+  .restuarant_menu-coupons
+  .top */
+.coupon_container {
+  display: flex;
+  gap: 100px;
+}
+.coupon_cards:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1.5px solid #e9e9eb;
+
+  /* border: 1px solid #0c0c2b; */
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

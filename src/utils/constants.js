@@ -4,5 +4,7 @@ export const CDN_URL =
 export const LOGO_URL =
   "https://w7.pngwing.com/pngs/126/52/png-transparent-logo-brand-font-food-product-restaurant-logo-design-food-label-text-thumbnail.png";
 
+export const MEDIA_ASSETS = "https://media-assets.swiggy.com/";
+
 //named export
 //import {CDN_URL} from './constants';
