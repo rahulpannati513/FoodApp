@@ -37,9 +37,13 @@ const ResturantMenu = () => {
     costForTwoMessage,
     aggregatedDiscountInfoV2,
   } = resInfo?.cards[0]?.card?.card?.info;
+  // const { title } =
+  //   data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+  const { itemCards, info } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card.card;
 
   return (
-    <div className="restuarant_menu_body">
+    <div id="restuarant_menu_body">
       {" "}
       <div className="res-menu-top-container">
         <div className="res-menu-top-container_left">
@@ -84,13 +88,32 @@ const ResturantMenu = () => {
             <div className="coupon_cards">
               {aggregatedDiscountInfoV2.descriptionList[0].meta}
             </div>
-            <div className="coupon_cards">
-              {aggregatedDiscountInfoV2.descriptionList[0].meta}
-            </div>
           </div>
         </div>
 
-        <div></div>
+        <div id="recomended">
+          <ul>
+            {itemCards.map((item) => (
+              <>
+                <div id="menu-list">
+                  {" "}
+                  <div>
+                    <h3>{item?.card?.info?.name}</h3>
+                    <li>{"₹ " + item?.card?.info?.defaultPrice / 100}</li>
+                    <li>{item?.card?.info?.category}</li>
+                    <li>{item?.card?.info?.description}</li>
+                  </div>
+                  <div>
+                    <img
+                      className="food-icon"
+                      src={MEDIA_ASSETS + item?.card?.info?.imageId}
+                    ></img>
+                  </div>
+                </div>
+              </>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
