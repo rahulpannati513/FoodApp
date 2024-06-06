@@ -6,5 +6,7 @@ export const LOGO_URL =
 
 export const MEDIA_ASSETS = "https://media-assets.swiggy.com/";
 
+export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.406498&lng=78.47724389999999&restaurantId=";
+
 //named export
 //import {CDN_URL} from './constants';

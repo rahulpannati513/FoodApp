@@ -1,29 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Shimmer } from "react-shimmer";
 import { FaStar } from "react-icons/fa";
-import { MEDIA_ASSETS } from "../utils/constants";
 import { BsCircleHalf } from "react-icons/bs";
-
+import { MEDIA_ASSETS } from "../utils/constants";
+import useResturantMenu from "../utils/useResturantMenu";
 function MyComponent() {
   return <FaStar />;
 }
 
 const ResturantMenu = () => {
-  const [resInfo, setResInfo] = useState(null); //creating a state variable to store the data AND PASS TO THE RESTUAURANT MENU
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.406498&lng=78.47724389999999&restaurantId=414835"
-    );
-    const json = await data.json();
-    console.log(json);
-    setResInfo(json.data);
-  };
-
+  const resInfo = useResturantMenu(resId);
+  
   if (resInfo === null) {
     return <Shimmer />;
   }
