@@ -3,6 +3,8 @@ import { useState } from "react";
 import resList from "../utils/mockData";
 import ResturentCard from "./ResturentCard";
 import Schimmer from "./Schimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 const Body = () => {
   const [listOfResurent, setListResturent] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -31,6 +33,11 @@ const Body = () => {
   // if (listOfResurent.length === 0) {
   //   return <Schimmer />;
   // }
+
+const onlineStatus = useOnlineStatus();
+
+ if(onlineStatus == false) return <h1> Looks like You're offline !! Please check Your internet Connection </h1>
+
 
   return listOfResurent.length === 0 ? (
     <Schimmer />
