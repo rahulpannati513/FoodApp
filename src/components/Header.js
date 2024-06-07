@@ -8,7 +8,7 @@ const Header = () => {
   const [btnName, setbtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex flex-col">
       <div>
         <Link to="/">
           <img className="logo" src={LOGO_URL} alt="logo" />

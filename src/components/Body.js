@@ -4,6 +4,8 @@ import resList from "../utils/mockData";
 import ResturentCard from "./ResturentCard";
 import Schimmer from "./Schimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
+// import link
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfResurent, setListResturent] = useState([]);
@@ -20,6 +22,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log("in body js json plain is printinign")
     console.log(json);
    
 
@@ -28,6 +31,7 @@ const Body = () => {
       json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     
     );
+    console.log("in body json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants")
     console.log(json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setfilteredResturent(
       json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -88,7 +92,10 @@ const onlineStatus = useOnlineStatus();
       </div>
       <div className="res-container">
         {filteredResturent.map((rahul) => (
-          <ResturentCard key={rahul.info.id} resData={rahul} />
+          <Link key={rahul.info.id} 
+          to={"/resturant/"+rahul.info.id}>
+          <ResturentCard  resData={rahul} />
+          </Link>
         ))}
       </div>
     </div>
@@ -96,3 +103,7 @@ const onlineStatus = useOnlineStatus();
 };
 
 export default Body;
+
+
+
+
