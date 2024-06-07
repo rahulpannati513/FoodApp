@@ -20,15 +20,20 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json);
+   
 
     //optional chaining - if the value is not present it will not throw error
     setListResturent(
-      json?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    
     );
+    console.log(json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setfilteredResturent(
-      json?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+  
 
   // if (listOfResurent.length === 0) {
   //   return <Schimmer />;
