@@ -1,12 +1,18 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
 
+
 const ResturentCard = (props) => {
-  const { resData } = props;
+  
+  console.log("entered in resturant card")
+  //const resData = resData;
 
-  const { cloudinaryImageId, name, cuisines, avgRating } = resData.info; //optional chaining - if the value is not present it will not throw error
-
+  const {resData} = props;
+  console.log(resData);
+  const { cloudinaryImageId, name, cuisines, avgRating } = resData?.info; 
+//data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0].info
   return (
+
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
         className="res-img"
@@ -18,6 +24,7 @@ const ResturentCard = (props) => {
       <h4>{cuisines}</h4>
       <h3>⭐️{avgRating} </h3>
     </div>
+  
   );
 };
 

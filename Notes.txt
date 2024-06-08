@@ -1,0 +1,2 @@
+Higher Order funtions  components are taken input as a Existing component and enhance it and returns it back 
+
