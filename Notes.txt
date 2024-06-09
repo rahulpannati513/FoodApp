@@ -1,3 +1,10 @@
 Higher Order is a funtions it takes a components and returns a component 
   components are taken input as a Existing component and enhance it and returns it back 
 
+
+
+React is powerd by two layers
+ ui layer and dat layer 
+ this data layer consist of state props  if you know how to proprerly applicaion is fast
+ui layer is lik jsx and data layer is the props states 
+ if we know how to 

@@ -30,14 +30,14 @@ const Body = () => {
 
     //optional chaining - if the value is not present it will not throw error
     setListResturent(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     //data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0].info
     );
     console.log("json in body setRestuarent json with depth rotating resturants");
 
     console.log(json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setfilteredResturent(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
 
     );
   };
