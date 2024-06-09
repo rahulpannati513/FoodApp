@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import resList from "../utils/mockData";
-import ResturentCard from "./ResturentCard";
+import ResturentCard,{withPromotedLabel} from "./ResturentCard";
 import Schimmer from "./Schimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
@@ -10,6 +10,9 @@ const Body = () => {
   const [listOfResurent, setListResturent] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredResturent, setfilteredResturent] = useState([]);
+
+  const ResturentCardPromoted = withPromotedLabel(ResturentCard);
+// it is a higher order funtion it takes the componenet and return the enhanced version in our case promoted is added
 
   useEffect(() => {
     fetchData();
@@ -27,14 +30,14 @@ const Body = () => {
 
     //optional chaining - if the value is not present it will not throw error
     setListResturent(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     //data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0].info
     );
     console.log("json in body setRestuarent json with depth rotating resturants");
 
     console.log(json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setfilteredResturent(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
 
     );
   };
@@ -51,19 +54,19 @@ const onlineStatus = useOnlineStatus();
 
   return  (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="filter flex-4">
+      <div className="search m-4 p-4">
           <input
             type="text"
             placeholder="Search Resturent"
-            className="search-btn"
+             className="searchBox border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="search-btn"
+        className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               //search logic here
               const filteredResturent = listOfResurent.filter((res) =>
@@ -76,7 +79,7 @@ const onlineStatus = useOnlineStatus();
           </button>
         </div>
         <button
-          className="filter-btn"
+         className="px-4 py-2 bg-gray-100 m-4 rounded-lg"
           onClick={() => {
             //filter logic here
 
@@ -91,14 +94,16 @@ const onlineStatus = useOnlineStatus();
       </div>
 
       
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredResturent.map((rahul) => (
-
           <Link 
           key={rahul.info.id}
           to={`/resturant/${rahul.info.id}`}
           >
-          <ResturentCard  resData={rahul} />
+          {rahul.info.isOpen ? (<ResturentCardPromoted resData={rahul} /> 
+        ):(
+        <ResturentCard  resData={rahul} />
+        )}
           </Link>
         ))}
       </div>

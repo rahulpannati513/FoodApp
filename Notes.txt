@@ -1,2 +1,3 @@
-Higher Order funtions  components are taken input as a Existing component and enhance it and returns it back 
+Higher Order is a funtions it takes a components and returns a component 
+  components are taken input as a Existing component and enhance it and returns it back 
 

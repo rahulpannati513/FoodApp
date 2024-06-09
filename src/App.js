@@ -31,7 +31,7 @@ import Grocery from "./components/Grocery";
 const AppLayout = () => {
   return (
     <div className="app">
-      <Header />
+          <Header className="flex flex-wrap" />
       <Outlet />
     </div>
   );
