@@ -9,6 +9,9 @@ import ContactUs from "./components/ContactUs";
 import ResturantMenu from "./components/ResturantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Grocery from "./components/Grocery";
+import {Provider} from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 //chucking
 //code splitiing
@@ -30,10 +33,13 @@ import Grocery from "./components/Grocery";
 
 const AppLayout = () => {
   return (
-    <div className="app">
+    <Provider store={appStore}>  
+     <div className="app">
           <Header className="flex flex-wrap" />
       <Outlet />
     </div>
+    </Provider>
+
   );
 };
 
@@ -46,6 +52,7 @@ const AppRouter = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/contactus", element: <ContactUs /> },
       { path: "/grocery", element: <Grocery /> },
+      { path: "/cart", element: <Cart/> },
       { path: "/resturant/:resId", element: <ResturantMenu /> }
     ],
     errorElement: <Error />,

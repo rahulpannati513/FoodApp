@@ -1,11 +1,25 @@
+import { addItem, removeItem } from '../utils/cartSlice';
 import {CDN_URL} from '../utils/constants';
-
+import { useDispatch } from 'react-redux';
 
 const ItemList =({items}) =>{
+  console.log("items in ItemList entry : ");
     console.log(items);
-    return(
-    
 
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+         //dispatch an action
+         dispatch(addItem(item));
+    };
+    
+    const handleRemoveItem = () => {
+      //dispatch an action
+      dispatch(removeItem());
+ };
+
+
+return(
         <div>
         {items.map((item) => (
           <div
@@ -26,8 +40,19 @@ const ItemList =({items}) =>{
             </div>
             <div className="w-3/12 p-4">
               <div className="absolute">
-                <button className="p-2 mx-16   rounded-lg bg-black text-white shadow-lg hover:bg-white  hover:text-black transition-all duration-[.3s]">
+                <button className="p-2 mx-16   rounded-lg bg-black text-white 
+                shadow-lg hover:bg-white  hover:text-black transition-all
+                 duration-[.3s]"
+                 onClick={() => handleAddItem(item)}
+                 >
                   Add +
+                </button>
+                <button className="p-2 mx-16    rounded-lg bg-black text-white 
+                shadow-lg hover:bg-white  hover:text-black transition-all
+                 duration-[.3s]"
+                 onClick={()=>handleRemoveItem()}
+                 >
+                  remove -
                 </button>
               </div>
               <img 
@@ -39,7 +64,6 @@ const ItemList =({items}) =>{
           </div>
         ))}
       </div>
- 
     );
 }
 
